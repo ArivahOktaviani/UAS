@@ -35,9 +35,9 @@ st.sidebar.title("Pengaturan")
 left_col, mid_col, right_col = st.columns(3)
 negara = st.sidebar.selectbox('Negara : ',negara_li)
 kode = data_json[data_json['name']==negara]['alpha-3'].tolist()[0]
-st.sidebar.write('Kode negara : ',kode, color = "green")
+st.sidebar.write('Kode negara : ',kode)
 #TAHUN
-st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
+st.sidebar.header('Pengaturan Negara')
 tahun = st.sidebar.slider("Tahun Produksi :", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ##############SIDEBAR################
@@ -45,14 +45,14 @@ n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ####################  BAGIAN A #######################
 #Tabel Representasi Data
 left_col.subheader("Tabel representasi data")
-df2 = pd.DataFrame(data_csv,columns= ['kode_negara','tahun','produksi'])
-df2 = df2.loc[df2['kode_negara']==kode]
-df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
-left_col.write(df2)
+dfA = pd.DataFrame(data_csv,columns= ['kode_negara','tahun','produksi'])
+dfA = df2.loc[dfA['kode_negara']==kode]
+dfA['produksi'] = pd.to_numeric(dfA['produksi'], errors='coerce')
+left_col.write(dfA)
 #Grafik Negara dengan Produksi Sesuai dengan Pilihan
 right_col.subheader("Total Produksi Pertahun")
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df2['produksi'],color="green")
+ax.plot(dfA['tahun'], dfA['produksi'],color="green")
 ax.set_xlabel("Tahun", color="black", fontsize = 14)
 ax.set_ylabel("Jumlah Produksi", color="black", fontsize = 14)
 ax.legend(fontsize = 14)
