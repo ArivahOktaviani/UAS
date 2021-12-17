@@ -46,7 +46,7 @@ n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 #Tabel Representasi Data
 left_col.subheader("Tabel representasi data")
 dfA = pd.DataFrame(data_csv,columns= ['kode_negara','tahun','produksi'])
-dfA = df2.loc[dfA['kode_negara']==kode]
+dfA = dfA.loc[dfA['kode_negara']==kode]
 dfA['produksi'] = pd.to_numeric(dfA['produksi'], errors='coerce')
 left_col.write(dfA)
 #Grafik Negara dengan Produksi Sesuai dengan Pilihan
