@@ -64,6 +64,9 @@ plt.scatter("Tahun", "Jumlah Produksi", color="yellow", marker='x', label='item 
 plt.show()
 right_col.pyplot(fig)
 
+x_ = df_[df_['kode_negara']==kode]['tahun'].tolist()
+y_ = df_[df_['kode_negara']==kode]['produksi'].tolist()
+
 reg = LinearRegression()
 reg.fit(np.array(x_).reshape(-1,1),np.array(y_))
 m = reg.coef_[0]
