@@ -19,7 +19,6 @@ with open("kode_negara_lengkap.json", "r") as f:
     data = json.load(f)
 print(data[0])
 dfJ = pd.DataFrame(data)
-print (dfj)
 'data csv'
 csv = pd.read_csv("produksi_minyak_mentah.csv")
 df = pd.DataFrame(csv)
