@@ -97,7 +97,7 @@ st.pyplot(plt)
 
 ####################  BAGIAN D #######################
 st.header("Summary")
-#Negara dengan Produksi Besar Setiap Tahun
+#Negara dengan Produksi Besar dari Setiap Tahun
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
 nama_negara = ""
@@ -117,7 +117,7 @@ st.markdown(f"Region : {region_negara}")
 st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
-#Negara dengan Produksi  Besar di Keseluruan Tahun
+#Negara dengan Produksi  Besar dari Keseluruan Tahun
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
 kode_negara = dk[:1].iloc[0]['kode_negara']
 nama_negara = ""
@@ -130,7 +130,7 @@ for i in range(len(data_json)):
         region_negara = list(data_json['region'])[i]
         subregion_negara = list(data_json['sub-region'])[i]
 
-st.subheader('Negara dengan Produksi Terbesar di Kesuluruhan Tahun')
+st.subheader('Negara dengan Produksi Terbesar dari Kesuluruhan Tahun')
 st.markdown(f"Negara : {nama_negara}")
 st.markdown(f"Kode Negara : {kode_negara}")
 st.markdown(f"Region : {region_negara}")
@@ -160,7 +160,7 @@ st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
 
-#Negara dengan Produksi  Terkecil di Keseluruan Tahun (tidaknol)                                  
+#Negara dengan Produksi  Terkecil dari Keseluruan Tahun (tidaknol)                                  
 dfakumulatifmin=dk[dk.kumulatif !=0]
 dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['kumulatif'], ascending = True)
 jumlah_produksi = dfakumulatifmin[:1].iloc[0]['kumulatif']
@@ -175,7 +175,7 @@ for i in range(len(data_json)):
         region_negara = list(data_json['region'])[i]
         subregion_negara = list(data_json['sub-region'])[i]
                                                 
-st.subheader('Negara dengan Produksi Terkecil di Keseluruhan Tahun')
+st.subheader('Negara dengan Produksi Terkecil dari Keseluruhan Tahun')
 st.markdown(f"Negara : {nama_negara}")
 st.markdown(f"Kode Negara : {kode_negara}")
 st.markdown(f"Region : {region_negara}")
@@ -201,7 +201,7 @@ dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
 st.write(dfproduksinol)
  
-#Negara dengan Produksi Nok di Keseluruan Tahun                                                        
+#Negara dengan Produksi Nok dari Keseluruan Tahun                                                        
 dfproduksikumulatifnol = dfb[dfb.produksi == 0]
 listnegarakumulatifnol = []
 listregionkumulatifnol = []
@@ -218,5 +218,5 @@ dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
                                                         
-st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol) di Keseluruhan Tahun')
+st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol) dari Keseluruhan Tahun')
 st.write(dfproduksikumulatifnol)
