@@ -19,7 +19,7 @@ data_json = data_kodenegara.dataFrame
 negara_li = data_json['name'].tolist()
 #DATA CSV
 data_negara = csvHandler('produksi_minyak_mentah.csv')
-csv_ = data_negara.dataFrame
+data_csv = data_negara.dataFrame
 #################DATA###################
 
 ################TITLE#################
@@ -45,7 +45,7 @@ n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ####################  BAGIAN A #######################
 #Tabel Representasi Data
 left_col.subheader("Tabel representasi data")
-df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
+df2 = pd.DataFrame(data_csv,columns= ['kode_negara','tahun','produksi'])
 df2 = df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
@@ -63,14 +63,14 @@ right_col.pyplot(fig)
 ####################  BAGIAN B #######################
 st.subheader("Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara dan Tahun Inputan User")
 list_kodenegara = []
-for i in list(csv_['kode_negara']) :
+for i in list(data_csv['kode_negara']) :
     if i not in list(data_json['alpha-3']) :
         list_kodenegara.append(i)
 for i in list_kodenegara :
-    csv_ = csv_[csv_.kode_negara != i]
-print(csv_)
+    data_csv = data_csv[data_csv.kode_negara != i]
+print(data_csv)
    
-dfb = csv_.loc[csv_['tahun'] == tahun]
+dfb = data_csv.loc[data_csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n]
 print(df3)
@@ -86,12 +86,12 @@ st.subheader('Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara Inputa
 list_a = []
 kumulatif = []
 
-for i in list (csv_['kode_negara']) :
+for i in list (data_csv['kode_negara']) :
     if i not in list_a:
         list_a.append(i)
         
 for i in list_a :
-    a=csv_.loc[csv_['kode_negara'] ==i,'produksi'].sum()
+    a=data_csv.loc[data_csv['kode_negara'] ==i,'produksi'].sum()
     kumulatif.append(a)
     
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
