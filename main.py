@@ -199,6 +199,7 @@ st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol)')
 dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
+st.write(dfproduksinol)
  
 #Negara dengan Produksi Nok di Keseluruan Tahun                                                        
 dfproduksikumulatifnol = dfb[dfb.produksi == 0]
@@ -217,6 +218,5 @@ dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
                                                         
-st.write(dfproduksinol)
 st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol) di Keseluruhan Tahun')
 st.write(dfproduksikumulatifnol)
