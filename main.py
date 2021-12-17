@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 from matplotlib import cm 
 import matplotlib.colors as colors
 from fileHandler import csvHandler,jsonHandler
@@ -61,7 +62,34 @@ ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
 ax.legend(fontsize = 20)
 plt.scatter("Tahun", "Jumlah Produksi", color="yellow", marker='x', label='item 1')
 plt.show()
-right_col.pyplot(fig)
+right_col.pyplot(fig
+              reg = LinearRegression()
+reg.fit(np.array(x_).reshape(-1,1),np.array(y_))
+m = reg.coef_[0]
+c = reg.intercept_
+y_trend = [m*x+c for x in x_]
+if c >= 0:
+    equation = 'y={m:.2f}x+{c:.2f}'.format(m=m,c=c)
+else:
+    equation = 'y={m:.2f}x{c:.2f}'.format(m=m,c=c)
+
+dic = {'tahun':x_,'produksi':y_}
+st.write(pd.DataFrame(dic))
+
+plotting = st.selectbox('Pilih tipe plotting : ',['tipe 1','tipe 2'])
+
+if plotting == 'tipe 1':
+    plt.title('Data Produksi {}'.format(negara))
+    plt.plot(x_,y_,label='Actual')
+    plt.plot(x_,y_trend,label='Trendline\n{}'.format(equation))
+    plt.xlabel('Tahun')
+    plt.ylabel('Produksi')
+    plt.legend()
+    st.pyplot(plt)
+else:
+    dic['trendline'] = y_trend
+    fig = px.scatter(pd.DataFrame(dic),x='tahun',y='produksi',trendline='lowess',trendline_options=dict(frac=0.1))
+    st.plotly_chart(fig)
 
 
 #b
