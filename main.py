@@ -8,7 +8,6 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 from matplotlib import cm 
 import matplotlib.colors as colors
 from fileHandler import csvHandler,jsonHandler
@@ -55,7 +54,7 @@ left_col.write(df2)
 #Grafik Negara dengan Produksi Sesuai dengan Pilihan
 right_col.subheader("Total Produksi Pertahun")
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df2['produksi'])
+ax.plot(df2['tahun'], df2['produksi'],color="red")
 ax.set_xlabel("Tahun", color="black", fontsize = 14)
 ax.set_ylabel("Jumlah Produksi", color="black", fontsize = 14)
 ax.legend(fontsize = 14)
