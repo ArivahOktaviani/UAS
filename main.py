@@ -106,7 +106,7 @@ st.pyplot(plt)
 ####################  BAGIAN C #######################
 
 ####################  BAGIAN D #######################
-st.subheader("Summary")
+st.header("Summary")
 #Negara dengan Produksi Paling Besar Setiap Tahun
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
@@ -120,7 +120,7 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
 
-st.write('Negara dengan Produksi Terbesar',color="green")
+st.subheader('Negara dengan Produksi Terbesar',color="green")
 st.markdown(f"Negara : {nama_negara}")
 st.markdown(f"Kode Negara : {kode_negara}")
 st.markdown(f"Region : {region_negara}")
