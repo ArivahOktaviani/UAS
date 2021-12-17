@@ -64,12 +64,12 @@ right_col.pyplot(fig)
 
 ####################  BAGIAN B #######################
 st.write("Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara dan Tahun Inputan User")
-list_kodekumpulannegara = []
+list_kodenegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
-        list_kodekumpulannegara.append(i)
+        list_kodenegara.append(i)
 
-for i in list_kodekumpulannegara :
+for i in list_kodenegara :
     csv_ = csv_[csv_.kode_negara != i]
 print(csv_)
    
