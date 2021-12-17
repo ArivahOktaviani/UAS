@@ -82,17 +82,16 @@ st.pyplot(plt)
 ####################  BAGIAN C #######################
 st.subheader('Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara Inputan User')
 data1 = []
-kumulatif = []
-
+total = []
 for i in list (data_csv['kode_negara']) :
     if i not in data1:
         data1.append(i)
         
 for i in data1 :
     a=data_csv.loc[data_csv['kode_negara'] ==i,'produksi'].sum()
-    kumulatif.append(a)
+    total.append(a)
     
-dk = pd.DataFrame(list(zip(data1,kumulatif)), columns = ['kode_negara','kumulatif'])
+dk = pd.DataFrame(list(zip(data1,total)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n_tampil]
 
