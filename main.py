@@ -73,7 +73,7 @@ for i in list_kodenegara :
 print(csv_)
    
 dfb = csv_.loc[csv_['tahun'] == tahun]
-dfb = dfb.sort_values(by='produksi')
+dfb = dfb.sort_values(by='produksi',ascending = True)
 df3 = dfb[:n]
 print(df3)
 df3.plot.bar(x='kode_negara', y='produksi')
