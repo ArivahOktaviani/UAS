@@ -100,7 +100,7 @@ for i in list (csv['kode_negara']) :
         list_a.append(i)
         
 for i in list_a :
-    a=csv_.loc[csv['kode_negara'] ==i,'produksi'].sum()
+    a=csv.loc[csv['kode_negara'] ==i,'produksi'].sum()
     kumulatif.append(a)
     
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
