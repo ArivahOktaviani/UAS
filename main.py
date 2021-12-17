@@ -201,7 +201,7 @@ for i in range(len(dfproduksinol)):
             listnegaranol.append(list(df_info['name'])[j])
             listregionol.append(list(df_info['region'])[j])
             listsubregionol.append(list(df_info['sub-region'])[j])
-st.subheader('Negara dengan Jumlah Produksi Minyak 0(nol)')
+st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol)')
 dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
@@ -224,5 +224,5 @@ dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
                                                         
 st.write(dfproduksinol)
-st.subheader('Negara dengan Jumlah Produksi Minyak 0(nol) di Keseluruhan Tahun')
+st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol) di Keseluruhan Tahun')
 st.write(dfproduksikumulatifnol)
