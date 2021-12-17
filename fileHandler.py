@@ -41,10 +41,3 @@ class jsonHandler:
     def jsonToCsv(self,csvFile):
         self.dataFrame.to_csv('{}.csv'.format(csvFile),index=False) 
         
-
-
-# a = csvHandler('produksi_minyak_mentah.csv')
-# a.csvToJson('tes')
-
-# a = jsonHandler('kode_negara_lengkap.json')
-# print(a.dataFrame)
