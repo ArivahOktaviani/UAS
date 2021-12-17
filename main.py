@@ -16,13 +16,13 @@ import json
 'DATA'
 'data json'
 with open("kode_negara_lengkap.json", "r") as f:
-    data = json.load(f)
-print(data[0])
-dfJ = pd.DataFrame(data)
+    data_json = json.load(f)
+print(data_json[0])
+json = pd.DataFrame(data_json)
 'data csv'
-csv = pd.read_csv("produksi_minyak_mentah.csv")
-df = pd.DataFrame(csv)
-print(df)
+data_csv = pd.read_csv("produksi_minyak_mentah.csv")
+csv = pd.DataFrame(data_csv)
+print(csv)
 
 
 #MEMBUAT DATA FRAME
