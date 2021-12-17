@@ -1,19 +1,26 @@
-import json
+"""
+Aplikasi Streamlit untuk menggambarkan data produksi minyak mentah dari berbagai daerah di seluruh dunia.
+Referensi API Streamlit: https://docs.streamlit.io/library/api-reference
+Nama : Arivah Oktaviani 
+NIM : 12220018
+"""
 import pandas as pd
 import numpy as np
+import streamlit as st
 import matplotlib.pyplot as plt
 from matplotlib import cm 
 import matplotlib.colors as colors
-import streamlit as st
 from fileHandler import csvHandler,jsonHandler
+import json
 
-#DATA JSON
-with open("kode_negara_lengkap.json", "r") as read_file:
-    fname = json.load(read_file)
-print(fname[0])
-dfJ = pd.DataFrame(fname)
-
-#DATA CSV
+'DATA'
+'data json'
+with open("kode_negara_lengkap.json", "r") as f:
+    data = json.load(f)
+print(data[0])
+dfJ = pd.DataFrame(data)
+print (dfj)
+'data csv'
 csv = pd.read_csv("produksi_minyak_mentah.csv")
 df = pd.DataFrame(csv)
 print(df)
