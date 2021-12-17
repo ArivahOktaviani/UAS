@@ -46,9 +46,9 @@ st.sidebar.write('Kode negara : ',kode, color = "green")
 st.sidebar.write('Negara : ',negara, color = "red")
 
 # MENGUBAH STRING MENJADI FLOAT
-df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
-df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
-df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
+csv['produksi'] = csv['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
+csv['produksi'] = csv['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
+csv['produksi'] = pd.to_numeric(csv['produksi'], errors='coerce')
 
 #OUTPUT TABEL A
 df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
