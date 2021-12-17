@@ -13,12 +13,12 @@ import matplotlib.colors as colors
 from fileHandler import csvHandler,jsonHandler
 import json
 
-'DATA'
-'data json'
+"DATA"
+"data json"
 with open("kode_negara_lengkap.json", "r") as f:
     data_json = json.load(f)
 json = pd.DataFrame(data_json)
-'data csv'
+"data csv"
 data_csv = pd.read_csv("produksi_minyak_mentah.csv")
 csv = pd.DataFrame(data_csv)
 print(csv)
