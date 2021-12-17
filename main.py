@@ -67,33 +67,30 @@ right_col.pyplot(fig)
 x_ = csv_[csv_['kode_negara']==kode]['tahun'].tolist()
 y_ = csv_[csv_['kode_negara']==kode]['produksi'].tolist()
 
-reg = LinearRegression()
-reg.fit(np.array(x_).reshape(-1,1),np.array(y_))
-m = reg.coef_[0]
-c = reg.intercept_
-y_trend = [m*x+c for x in x_]
-if c >= 0:
-    equation = 'y={m:.2f}x+{c:.2f}'.format(m=m,c=c)
-else:
-    equation = 'y={m:.2f}x{c:.2f}'.format(m=m,c=c)
+right_col.subheader("Total penumpang perbulan")
+total_pertahun = []
+for i in range(len(x_)):
+    df = pd.read_csv(csv_[x_[i]])
+    df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
+    df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
+    df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
+    #jumlah_perbulan = df_bulan['jumlah_penumpang'].astype(int).sum()
+    jumlah_pertahun = df['produksi'].sum()
+    #print(f"Bulan {bulan}, total penumpang: {jumlah_perbulan}")
+    total_pertahun.append(int(jumlah_pertahun))
 
-dic = {'tahun':x_,'produksi':y_}
-st.write(pd.DataFrame(dic))
+cmap_name = 'tab20'
+cmap = cm.get_cmap(cmap_name)
+colors = cmap.colors[:len(x_)]
+fig, ax = plt.subplots()
+ax.bar(x_, total_pertahun, color=colors)
+ax.set_xticklabels(x_, rotation=45)
+ax.set_xlabel("Tahun", fontsize=12)
+ax.set_ylabel("Total jumlah penumpang", fontsize=12)
+plt.tight_layout()
 
-plotting = st.selectbox('Pilih tipe plotting : ',['tipe 1','tipe 2'])
+right_col.pyplot(fig)
 
-if plotting == 'tipe 1':
-    plt.title('Data Produksi {}'.format(negara))
-    plt.plot(x_,y_,label='Actual')
-    plt.plot(x_,y_trend,label='Trendline\n{}'.format(equation))
-    plt.xlabel('Tahun')
-    plt.ylabel('Produksi')
-    plt.legend()
-    st.pyplot(plt)
-else:
-    dic['trendline'] = y_trend
-    fig = px.scatter(pd.DataFrame(dic),x='tahun',y='produksi',trendline='lowess',trendline_options=dict(frac=0.1))
-    st.plotly_chart(fig)
 
 
 #b
