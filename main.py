@@ -9,7 +9,6 @@ import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
 from fileHandler import csvHandler,jsonHandler
-import json
 
 #################DATA###################
 #DATA JSON
