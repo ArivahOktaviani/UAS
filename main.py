@@ -34,7 +34,7 @@ st.sidebar.title("Pengaturan")
 #NEGARA
 left_col, mid_col, right_col = st.columns(3)
 negara = st.sidebar.selectbox('Negara : ',negara_li)
-kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
+kode = data_json[data_json['name']==negara]['alpha-3'].tolist()[0]
 st.sidebar.write('Kode negara : ',kode, color = "green")
 #TAHUN
 st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
