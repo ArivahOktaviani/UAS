@@ -70,7 +70,7 @@ right_col.pyplot(fig)
 #b
 list_kodekumpulannegara = []
 for i in list(csv_['kode_negara']) :
-    if i not in list(df_info['alpha-3']) :
+    if i not in list(json['alpha-3']) :
         list_kodekumpulannegara.append(i)
 
 for i in list_kodekumpulannegara :
