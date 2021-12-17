@@ -54,15 +54,12 @@ df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi 
 fig, ax = plt.subplots()
-ax = plt.gca()
-ax.tick_params(axis='x', colors='blue')
-ax.tick_params(axis='y', colors='red')
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", color="green", fontsize = 20)
 ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
 ax.legend(fontsize = 20)
-plt.scatter("Tahun", "Jumlah Produksi", color="yellowgreen", marker='x', label='item 1')
+
 plt.tight_layout()
 left_col.pyplot(fig)
 
