@@ -63,10 +63,8 @@ right_col.pyplot(fig)
 ####################  BAGIAN A #######################
 
 
-
-
-#b
-
+####################  BAGIAN B #######################
+left_col.subheader("Grafik Negara dengan Produksi Terbesar Sesuai Tahun Inputan User")
 list_kodekumpulannegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
@@ -76,9 +74,6 @@ for i in list_kodekumpulannegara :
     csv_ = csv_[csv_.kode_negara != i]
 print(csv_)
    
-
-
-
 dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 df3 = dfb[:n]
@@ -86,7 +81,7 @@ print(df3)
 df3.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 st.pyplot(plt)
-
+####################  BAGIAN A #######################
 #c
 st.write('Grafik Negara dengan Produksi Kumulatif Terbesar')
 list_a = []
