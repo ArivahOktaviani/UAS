@@ -49,14 +49,14 @@ n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 #Tabel Representasi Data
 left_col.subheader("Tabel representasi data")
 df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
-df2=df2.loc[df2['kode_negara']==kode]
+df2 = df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi 
 st.write(":asa")
 fig, ax = plt.subplots()
-x_ = df_[df_['kode_negara']==kode]['tahun'].tolist()
-y_ = df_[df_['kode_negara']==kode]['produksi'].tolist()
+x_ = csv_[csv_['kode_negara']==kode]['tahun'].tolist()
+y_ = csv_[csv_['kode_negara']==kode]['produksi'].tolist()
 dic = {'tahun':x_,'produksi':y_}
 st.write(pd.DataFrame(dic))
 ax.bar(x_,y_,total_perbulan, color=colors)
