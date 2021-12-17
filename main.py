@@ -54,7 +54,7 @@ left_col.write(df2)
 #Grafik Negara dengan Produksi Terbesar
 right_col.subheader("Total penumpang perbulan")
 fig, ax = plt.subplots()
-colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", color="red", fontsize = 20)
