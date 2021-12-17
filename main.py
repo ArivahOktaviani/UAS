@@ -154,7 +154,7 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
                                     
-for i in range(len(data_json):
+for i in range(len(data_json)):
     if list(data_json['alpha-3'])[i]==kode_negara:
         nama_negara = list(data_json['name'])[i]
         region_negara = list(data_json['region'])[i]
