@@ -53,7 +53,7 @@ df2 = df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi 
-ig, ax = plt.subplots()
+fig, ax = plt.subplots()
 ax = plt.gca()
 ax.tick_params(axis='x', colors='blue')
 ax.tick_params(axis='y', colors='red')
