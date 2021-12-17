@@ -70,7 +70,6 @@ y_ = csv_[csv_['kode_negara']==kode]['produksi'].tolist()
 right_col.subheader("Total penumpang perbulan")
 total_pertahun = []
 for i in range(len(x_)):
-    df = pd.read_csv(csv_[x_[i]])
     df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
     df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
     df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
