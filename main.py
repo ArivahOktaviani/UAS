@@ -107,7 +107,7 @@ st.pyplot(plt)
 
 ####################  BAGIAN D #######################
 st.header("Summary")
-#Negara dengan Produksi Paling Besar Setiap Tahun
+#Negara dengan Produksi Besar Setiap Tahun
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
 nama_negara = ""
@@ -127,6 +127,7 @@ st.markdown(f"Region : {region_negara}")
 st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
+#Negara dengan Produksi  Besar di Keseluruan Tahun
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
 kode_negara = dk[:1].iloc[0]['kode_negara']
 nama_negara = ""
@@ -146,6 +147,7 @@ st.markdown(f"Region : {region_negara}")
 st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
+#Negara dengan Produksi  Terkecil setiap Tahun(tidaknol)
 dfterkecil = dfb[dfb.produksi !=0]
 dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True)
 jumlah_produksi = dfterkecil[:1].iloc[0]['produksi']
@@ -166,7 +168,9 @@ st.markdown(f"Kode Negara : {kode_negara}")
 st.markdown(f"Region : {region_negara}")
 st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
-                                    
+
+
+#Negara dengan Produksi  Terkecil di Keseluruan Tahun (tidaknol)                                  
 dfakumulatifmin=dk[dk.kumulatif !=0]
 dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['kumulatif'], ascending = True)
 jumlah_produksi = dfakumulatifmin[:1].iloc[0]['kumulatif']
@@ -189,7 +193,7 @@ st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
 
-
+#Negara dengan Produksi Nol di Setiap Tahun
 dfproduksinol = dfb[dfb.produksi == 0]
 listnegaranol = []
 listregionol = []
@@ -206,7 +210,7 @@ dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
  
-                                                        
+#Negara dengan Produksi Nok di Keseluruan Tahun                                                        
 dfproduksikumulatifnol = dfb[dfb.produksi == 0]
 listnegarakumulatifnol = []
 listregionkumulatifnol = []
