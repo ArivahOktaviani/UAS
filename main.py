@@ -52,9 +52,8 @@ df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi Terbesar
-right_col.subheader("Total penumpang perbulan")
+st.write(":asa")
 fig, ax = plt.subplots()
-
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", color="red", fontsize = 20)
@@ -66,6 +65,7 @@ right_col.pyplot(fig)
 
 
 #b
+right_col.subheader("Tabel Produksi di Nehara Pilihan")
 list_kodekumpulannegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
