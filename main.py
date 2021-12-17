@@ -127,10 +127,6 @@ st.markdown(f"Region : {region_negara}")
 st.markdown(f"SubRegion :{subregion_negara}")
 st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
-
-
-st.markdown(subregion_negara)
-
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
 kode_negara = dk[:1].iloc[0]['kode_negara']
 nama_negara = ""
@@ -143,12 +139,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
 
-st.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+st.subheader('Negara dengan Produksi Terbesar di Kesulurahan Tahun')
+st.markdown(f"Negara : {nama_negara}")
+st.markdown(f"Kode Negara : {kode_negara}")
+st.markdown(f"Region : {region_negara}")
+st.markdown(f"SubRegion :{subregion_negara}")
+st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
 dfterkecil = dfb[dfb.produksi !=0]
 dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True)
@@ -164,12 +160,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
                                     
-st.write('Negara dengan Produksi Terkecil')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+st.subheader('Negara dengan Produksi Terkecil')
+st.markdown(f"Negara : {nama_negara}")
+st.markdown(f"Kode Negara : {kode_negara}")
+st.markdown(f"Region : {region_negara}")
+st.markdown(f"SubRegion :{subregion_negara}")
+st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
                                     
 dfakumulatifmin=dk[dk.kumulatif !=0]
 dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['kumulatif'], ascending = True)
@@ -185,12 +181,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
                                                 
-st.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+st.subheader('Negara dengan Produksi Terkecil di Keseluruhan Tahun')
+st.markdown(f"Negara : {nama_negara}")
+st.markdown(f"Kode Negara : {kode_negara}")
+st.markdown(f"Region : {region_negara}")
+st.markdown(f"SubRegion :{subregion_negara}")
+st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
 
 
 
