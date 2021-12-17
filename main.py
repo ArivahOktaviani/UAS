@@ -35,17 +35,15 @@ st.markdown('17 Desember 2021 ')
 st.sidebar.title("Pengaturan")
 #NEGARA
 left_col, mid_col, right_col = st.columns(3)
-negara = st.sidebar.selectbox('Negara : ',negara_li) 
+negara = st.sidebar.selectbox('Negara : ',negara_li)
+kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
+st.sidebar.write('Kode negara : ',kode, color = "green")
 #TAHUN
 st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
 tahun = st.sidebar.slider("Tahun Produksi :", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
-#MENGATUR LETAK OUTPUT
-kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
 
-st.sidebar.write('Kode negara : ',kode, color = "green")
-st.sidebar.write('Negara : ',negara, color = "red")
 
 # MENGUBAH STRING MENJADI FLOAT
 csv_['produksi'] = csv_['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
