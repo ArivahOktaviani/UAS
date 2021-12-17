@@ -15,10 +15,9 @@ import json
 
 #################DATA###################
 #DATA JSON
-with open("kode_negara_lengkap.json") as f:
-    data_json = json.load(f)
-json = pd.DataFrame(data_json)
-
+jh_ = jsonHandler('kode_negara_lengkap.json')
+df_info = jh_.dataFrame
+negara_li = df_info['name'].tolist()
 #DATA CSV
 data_csv = pd.read_csv("produksi_minyak_mentah.csv")
 csv = pd.DataFrame(data_csv)
@@ -33,10 +32,9 @@ st.markdown('Arivah Oktaviani - 12220018')
 st.markdown('UAS PROKOM ')
 st.markdown('17 Desember 2021 ')
 ch_ = csvHandler('produksi_minyak_mentah.csv')
-jh_ = jsonHandler('kode_negara_lengkap.json')
+
 csv_ = ch_.dataFrame
-df_info = jh_.dataFrame
-negara_li = df_info['name'].tolist()
+
 
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
