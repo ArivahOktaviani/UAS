@@ -62,33 +62,7 @@ ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
 ax.legend(fontsize = 20)
 plt.scatter("Tahun", "Jumlah Produksi", color="yellow", marker='x', label='item 1')
 plt.show()
-right_col.pyplot(fig)
 
-x_ = csv_[csv_['kode_negara']==kode]['tahun'].tolist()
-y_ = csv_[csv_['kode_negara']==kode]['produksi'].tolist()
-
-right_col.subheader("Total penumpang perbulan")
-total_pertahun = []
-for i in range(len(x_)):
-    df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
-    df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
-    df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
-    #jumlah_perbulan = df_bulan['jumlah_penumpang'].astype(int).sum()
-    jumlah_pertahun = df['produksi'].sum()
-    #print(f"Bulan {bulan}, total penumpang: {jumlah_perbulan}")
-    total_pertahun.append(int(jumlah_pertahun))
-
-cmap_name = 'tab20'
-cmap = cm.get_cmap(cmap_name)
-colors = cmap.colors[:len(x_)]
-fig, ax = plt.subplots()
-ax.bar(x_, total_pertahun, color=colors)
-ax.set_xticklabels(x_, rotation=45)
-ax.set_xlabel("Tahun", fontsize=12)
-ax.set_ylabel("Total jumlah penumpang", fontsize=12)
-plt.tight_layout()
-
-right_col.pyplot(fig)
 
 
 
