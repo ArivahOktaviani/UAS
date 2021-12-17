@@ -44,11 +44,6 @@ tahun = st.sidebar.slider("Tahun Produksi :", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 ##############SIDEBAR################
 
-# MENGUBAH STRING MENJADI FLOAT
-csv_['produksi'] = csv_['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
-csv_['produksi'] = csv_['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
-csv_['produksi'] = pd.to_numeric(csv_['produksi'], errors='coerce')
-
 
 #OUTPUT TABEL A
 df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
