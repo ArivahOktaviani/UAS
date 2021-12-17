@@ -30,11 +30,7 @@ st.title('Statistik Produksi Minyak')
 st.markdown('Arivah Oktaviani - 12220018')
 st.markdown('UAS PROKOM ')
 st.markdown('17 Desember 2021 ')
-ch_ = csvHandler('produksi_minyak_mentah.csv')
-jh_ = jsonHandler('kode_negara_lengkap.json')
-csv_ = ch_.dataFrame
-df_info = jh_.dataFrame
-negara_li = df_info['name'].tolist()
+negara_li = json['name'].tolist()
 
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
