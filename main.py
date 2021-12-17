@@ -99,8 +99,8 @@ st.pyplot(plt)
 ####################  BAGIAN D #######################
 st.header("Summary")
 #Negara dengan Produksi Besar Setiap Tahun
-jumlah_produksi = terbesar[:1].iloc[0]['produksi']
-kode_negara = terbesar[:1].iloc[0]['kode_negara']
+jumlah_produksi = dfb[:1].iloc[0]['produksi']
+kode_negara = dfb[:1].iloc[0]['kode_negara']
 nama_negara = ""
 region_negara = ""
 subregion_negara = ""
