@@ -73,10 +73,11 @@ for i in list_kodenegara :
 print(csv_)
    
 dfb = csv_.loc[csv_['tahun'] == tahun]
-dfb = dfb.sort_values(by='produksi',ascending = True)
+dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n]
 print(df3)
 df3.plot.bar(x='kode_negara', y='produksi')
+plt.grid(True, color="red", linewidth="0.7", linestyle="-.", zorder=0)
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN B #######################
