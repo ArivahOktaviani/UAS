@@ -68,7 +68,7 @@ right_col.pyplot(fig)
 
 
 #b
-right_col.subheader("Tabel Produksi di Nehara Pilihan")
+
 list_kodekumpulannegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
