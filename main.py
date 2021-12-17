@@ -17,11 +17,10 @@ import json
 #DATA JSON
 jh_ = jsonHandler('kode_negara_lengkap.json')
 df_info = jh_.dataFrame
-negara_li = df_info['name'].tolist()
 #DATA CSV
 data_csv = pd.read_csv("produksi_minyak_mentah.csv")
 csv = pd.DataFrame(data_csv)
-print(csv)
+
 #################DATA###################
 
 
@@ -34,7 +33,7 @@ st.markdown('17 Desember 2021 ')
 ch_ = csvHandler('produksi_minyak_mentah.csv')
 
 csv_ = ch_.dataFrame
-
+negara_li = df_info['name'].tolist()
 
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
