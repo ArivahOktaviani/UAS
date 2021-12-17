@@ -62,7 +62,8 @@ ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
 ax.legend(fontsize = 20)
 plt.scatter("Tahun", "Jumlah Produksi", color="yellow", marker='x', label='item 1')
 plt.show()
-right_col.pyplot(fig
+right_col.pyplot(fig)
+
 reg = LinearRegression()
 reg.fit(np.array(x_).reshape(-1,1),np.array(y_))
 m = reg.coef_[0]
