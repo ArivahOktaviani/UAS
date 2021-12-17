@@ -54,6 +54,7 @@ df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi 
 fig, ax = plt.subplots()
+ax.plot(df2['tahun'], df2['produksi'])
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", color="green", fontsize = 20)
 ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
