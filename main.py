@@ -72,7 +72,7 @@ dfb = data_csv.loc[data_csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n_tampil]
 print(df3)
-df3.plot.bar(x='kode_egara', y='produksi',width=0.3,align="center",color="green")
+df3.plot.bar(x='kode_negara', y='produksi',width=0.3,align="center",color="green")
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN B #######################
