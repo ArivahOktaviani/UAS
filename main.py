@@ -105,7 +105,9 @@ dk = dk[:n]
 dk.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
 st.pyplot(plt)
+####################  BAGIAN C #######################
 
+####################  BAGIAN D #######################
 dfterkecil = dfb[dfb.produksi !=0]
 dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True)
 jumlah_produksi = dfterkecil[:1].iloc[0]['produksi']
@@ -148,8 +150,8 @@ st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
 
-####################  BAGIAN C #######################
-#d
+
+
 dfproduksinol = dfb[dfb.produksi == 0]
 listnegaranol = []
 listregionol = []
