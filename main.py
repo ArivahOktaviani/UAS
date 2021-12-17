@@ -52,7 +52,7 @@ left_col.write(df2)
 #Grafik Negara dengan Produksi Sesuai dengan Pilihan
 right_col.subheader("Total Produksi Pertahun")
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df2['produksi'],color="green")
+ax.plot(df2['tahun'], df2['produksi'],color="green",width=0.3)
 ax.set_xlabel("Tahun", color="black", fontsize = 14)
 ax.set_ylabel("Jumlah Produksi", color="black", fontsize = 14)
 ax.legend(fontsize = 14)
@@ -74,7 +74,7 @@ dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n]
 print(df3)
-df3.plot.bar(x='kode_negara', y='produksi',width=0.5, align="center",color="green")
+df3.plot.bar(x='kode_negara', y='produksi',width=0.3 align="center",color="green")
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN B #######################
@@ -98,7 +98,7 @@ dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulat
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n]
 
-dk.plot.bar(x='kode_negara', y='kumulatif',width=0.9, align="center",color="green") 
+dk.plot.bar(x='kode_negara', y='kumulatif',width=0.3, align="center",color="green") 
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN C #######################
