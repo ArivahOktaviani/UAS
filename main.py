@@ -67,9 +67,7 @@ for i in list(data_csv['kode_negara']) :
     if i not in list(data_json['alpha-3']) :
         list_kodenegara.append(i)
 for i in list_kodenegara :
-    data_csv = data_csv[data_csv.kode_negara != i]
-print(data_csv)
-   
+    data_csv = data_csv[data_csv.kode_negara != i]  
 dfb = data_csv.loc[data_csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n_tampil]
