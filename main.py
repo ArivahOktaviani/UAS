@@ -8,8 +8,6 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
-from matplotlib import cm 
-import matplotlib.colors as colors
 from fileHandler import csvHandler,jsonHandler
 import json
 
