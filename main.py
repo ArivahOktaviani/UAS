@@ -45,15 +45,14 @@ n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ##############SIDEBAR################
 
 ####################  BAGIAN A #######################
-#OUTPUT TABEL A
+#Tabel Representasi Data
 left_col.subheader("Tabel representasi data")
 df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
-
 left_col.write(df2)
-
-#OUTPUT GRAFIK A
+#Grafik Negara dengan Produksi Terbesar
+right_col.subheader("Total penumpang perbulan")
 fig, ax = plt.subplots()
 colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
@@ -64,6 +63,7 @@ ax.legend(fontsize = 20)
 plt.scatter("Tahun", "Jumlah Produksi", color="yellow", marker='x', label='item 1')
 plt.show()
 right_col.pyplot(fig)
+
 
 #b
 list_kodekumpulannegara = []
