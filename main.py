@@ -27,9 +27,9 @@ print(csv)
 
 ################TITLE#################
 st.title('Statistik Produksi Minyak')
-st.header('Arivah Oktaviani - 12220018')
-st.header('UAS PROKOM ')
-st.header('17 Desember 2021 ')
+st.markdown('Arivah Oktaviani - 12220018')
+st.markdown('UAS PROKOM ')
+st.markdown('17 Desember 2021 ')
 ch_ = csvHandler('produksi_minyak_mentah.csv')
 jh_ = jsonHandler('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
