@@ -68,13 +68,12 @@ list_kodenegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
         list_kodenegara.append(i)
-
 for i in list_kodenegara :
     csv_ = csv_[csv_.kode_negara != i]
 print(csv_)
    
 dfb = csv_.loc[csv_['tahun'] == tahun]
-dfb = dfb.sort_values(by='produksi', ascending = False)
+dfb = dfb.sort_values(by='produksi')
 df3 = dfb[:n]
 print(df3)
 df3.plot.bar(x='kode_negara', y='produksi')
