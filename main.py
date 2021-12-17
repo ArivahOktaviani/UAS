@@ -121,10 +121,14 @@ for i in range(len(df_info)):
         subregion_negara = list(df_info['sub-region'])[i]
 
 st.write('Negara dengan Produksi Terbesar')
-st.markdown(f"**Jumlah Produksi :  ({jumlah_produksi})")
-st.markdown(kode_negara)
-st.markdown(nama_negara)
-st.markdown(region_negara)
+st.markdown(f"Negara : {nama_negara}")
+st.markdown(f"Kode Negara : {kode_negara}")
+st.markdown(f"Region : {region_negara}")
+st.markdown(f"SubRegion :{subregion_negara}")
+st.markdown(f"Jumlah Produksi :  {jumlah_produksi}")
+
+
+
 st.markdown(subregion_negara)
 
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
