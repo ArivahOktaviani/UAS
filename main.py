@@ -74,15 +74,15 @@ for i in list(csv['kode_negara']) :
         list_kodekumpulannegara.append(i)
 
 for i in list_kodekumpulannegara :
-    csv_ = csv_[csv_.kode_negara != i]
-print(csv_)
+    csv = csv[csv.kode_negara != i]
+print(csv)
    
 st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
 
-dfb = csv_.loc[csv_['tahun'] == tahun]
+dfb = csv.loc[csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 df3 = dfb[:n]
 print(df3)
@@ -95,12 +95,12 @@ st.write('Grafik Negara dengan Produksi Kumulatif Terbesar')
 list_a = []
 kumulatif = []
 
-for i in list (csv_['kode_negara']) :
+for i in list (csv['kode_negara']) :
     if i not in list_a:
         list_a.append(i)
         
 for i in list_a :
-    a=csv_.loc[csv_['kode_negara'] ==i,'produksi'].sum()
+    a=csv_.loc[csv['kode_negara'] ==i,'produksi'].sum()
     kumulatif.append(a)
     
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
@@ -119,8 +119,8 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
                                     
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
+for i in range(len(json)):
+    if list(json['alpha-3'])[i]==kode_negara:
         nama_negara = list(df_info['name'])[i]
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
@@ -140,11 +140,11 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
                                                 
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
-        nama_negara = list(df_info['name'])[i]
-        region_negara = list(df_info['region'])[i]
-        subregion_negara = list(df_info['sub-region'])[i]
+for i in range(len(json)):
+    if list(json['alpha-3'])[i]==kode_negara:
+        nama_negara = list(json['name'])[i]
+        region_negara = list(json['region'])[i]
+        subregion_negara = list(json['sub-region'])[i]
                                                 
 st.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
 st.write(jumlah_produksi)
@@ -160,11 +160,11 @@ listregionol = []
 listsubregionol = []
 
 for i in range(len(dfproduksinol)):
-    for j in range(len(df_info)):
-        if list (dfproduksinol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
-            listnegaranol.append(list(df_info['name'])[j])
-            listregionol.append(list(df_info['region'])[j])
-            listsubregionol.append(list(df_info['sub-region'])[j])
+    for j in range(len(json)):
+        if list (dfproduksinol['kode_negara'])[i] == list(json['alpha-3'])[j]:
+            listnegaranol.append(list(json['name'])[j])
+            listregionol.append(list(json['region'])[j])
+            listsubregionol.append(list(json['sub-region'])[j])
 
 dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
@@ -177,11 +177,11 @@ listregionkumulatifnol = []
 listsubregionkumulatifnol = []
 
 for i in range(len(dfproduksikumulatifnol)):
-    for j in range(len(df_info)):
-        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
-            listnegarakumulatifnol.append(list(df_info['name'])[j])
-            listregionkumulatifnol.append(list(df_info['region'])[j])
-            listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
+    for j in range(len(json)):
+        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(json['alpha-3'])[j]:
+            listnegarakumulatifnol.append(list(json['name'])[j])
+            listregionkumulatifnol.append(list(json['region'])[j])
+            listsubregionkumulatifnol.append(list(json['sub-region'])[j])
 
 dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
