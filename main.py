@@ -139,7 +139,7 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
 
-st.subheader('Negara dengan Produksi Terbesar di Kesulurahan Tahun')
+st.subheader('Negara dengan Produksi Terbesar di Kesuluruhan Tahun')
 st.markdown(f"Negara : {nama_negara}")
 st.markdown(f"Kode Negara : {kode_negara}")
 st.markdown(f"Region : {region_negara}")
@@ -201,7 +201,7 @@ for i in range(len(dfproduksinol)):
             listnegaranol.append(list(df_info['name'])[j])
             listregionol.append(list(df_info['region'])[j])
             listsubregionol.append(list(df_info['sub-region'])[j])
-
+st.subheader('Negara dengan Jumlah Produksi Minyak 0(nol)')
 dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
@@ -218,7 +218,7 @@ for i in range(len(dfproduksikumulatifnol)):
             listnegarakumulatifnol.append(list(df_info['name'])[j])
             listregionkumulatifnol.append(list(df_info['region'])[j])
             listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
-
+st.subheader('Negara dengan Jumlah Produksi Minyak 0(nol) di Keseluruhan Tahun')
 dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
