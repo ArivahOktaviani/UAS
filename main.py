@@ -51,7 +51,7 @@ csv['produksi'] = csv['produksi'].astype(str).str.replace(",", "", regex=True).a
 csv['produksi'] = pd.to_numeric(csv['produksi'], errors='coerce')
 
 #OUTPUT TABEL A
-df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
+df2 = pd.DataFrame(csv,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
