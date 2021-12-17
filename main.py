@@ -41,11 +41,12 @@ st.sidebar.write('Kode negara : ',kode, color = "green")
 #TAHUN
 st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
 tahun = st.sidebar.slider("Tahun Produksi :", min_value=1971, max_value=2015)
-n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
+n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ##############SIDEBAR################
 
-
+####################  BAGIAN A #######################
 #OUTPUT TABEL A
+left_col.subheader("Tabel representasi data")
 df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
