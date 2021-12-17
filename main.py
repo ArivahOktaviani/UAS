@@ -81,9 +81,12 @@ print(df3)
 df3.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 st.pyplot(plt)
-####################  BAGIAN A #######################
-#c
-st.write('Grafik Negara dengan Produksi Kumulatif Terbesar')
+####################  BAGIAN B #######################
+
+
+
+####################  BAGIAN C #######################
+st.write('Grafik Negara dengan Produksi Terbesar')
 list_a = []
 kumulatif = []
 
@@ -145,6 +148,7 @@ st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
 
+####################  BAGIAN C #######################
 #d
 dfproduksinol = dfb[dfb.produksi == 0]
 listnegaranol = []
