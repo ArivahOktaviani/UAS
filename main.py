@@ -72,7 +72,7 @@ dfb = data_csv.loc[data_csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
 df3 = dfb[:n_tampil]
 print(df3)
-df3.plot.bar(x='kode_negara', y='produksi',width=0.3,align="center",color="green")
+df3.plot.bar(x='Kode Negara', y='Produksi',width=0.3,align="center",color="green")
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN B #######################
@@ -92,7 +92,7 @@ for i in data1 :
 dk = pd.DataFrame(list(zip(data1,total)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n_tampil]
-dk.plot.bar(x='kode_negara', y='kumulatif',width=0.3, align="center",color="green") 
+dk.plot.bar(x='Kode Negara', y='Total Produksi',width=0.3, align="center",color="green") 
 plt.show()
 st.pyplot(plt)
 ####################  BAGIAN C #######################
