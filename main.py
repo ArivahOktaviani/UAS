@@ -39,7 +39,7 @@ st.sidebar.write('Kode negara : ',kode)
 #TAHUN
 st.sidebar.header('Pengaturan Negara')
 tahun = st.sidebar.slider("Tahun Produksi :", min_value=1971, max_value=2015)
-n = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
+n_tampil = st.sidebar.number_input("Banyak Negara", min_value=1, max_value=249)
 ##############SIDEBAR################
 
 ####################  BAGIAN A #######################
@@ -72,7 +72,7 @@ print(data_csv)
    
 dfb = data_csv.loc[data_csv['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi',ascending = False)
-df3 = dfb[:n]
+df3 = dfb[:n_tampil]
 print(df3)
 df3.plot.bar(x='kode_negara', y='produksi',width=0.3,align="center",color="green")
 plt.show()
@@ -83,20 +83,20 @@ st.pyplot(plt)
 
 ####################  BAGIAN C #######################
 st.subheader('Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara Inputan User')
-list_a = []
+data1 = []
 kumulatif = []
 
 for i in list (data_csv['kode_negara']) :
-    if i not in list_a:
-        list_a.append(i)
+    if i not in data1:
+        data1.append(i)
         
-for i in list_a :
+for i in data1 :
     a=data_csv.loc[data_csv['kode_negara'] ==i,'produksi'].sum()
     kumulatif.append(a)
     
-dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
+dk = pd.DataFrame(list(zip(data1,kumulatif)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
-dk = dk[:n]
+dk = dk[:n_tampil]
 
 dk.plot.bar(x='kode_negara', y='kumulatif',width=0.3, align="center",color="green") 
 plt.show()
