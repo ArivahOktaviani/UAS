@@ -52,7 +52,7 @@ left_col.write(df2)
 #Grafik Negara dengan Produksi Sesuai dengan Pilihan
 right_col.subheader("Total Produksi Pertahun")
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df2['produksi'],color="green",width=0.3)
+ax.plot(df2['tahun'], df2['produksi'],color="green")
 ax.set_xlabel("Tahun", color="black", fontsize = 14)
 ax.set_ylabel("Jumlah Produksi", color="black", fontsize = 14)
 ax.legend(fontsize = 14)
