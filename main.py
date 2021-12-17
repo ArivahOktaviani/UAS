@@ -64,7 +64,7 @@ right_col.pyplot(fig)
 
 
 ####################  BAGIAN B #######################
-st.write("Grafik Negara dengan Produksi Terbesar Sesuai Tahun Inputan User")
+st.write("Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara dan Tahun Inputan User")
 list_kodekumpulannegara = []
 for i in list(csv_['kode_negara']) :
     if i not in list(df_info['alpha-3']) :
@@ -86,7 +86,7 @@ st.pyplot(plt)
 
 
 ####################  BAGIAN C #######################
-st.write('Grafik Negara dengan Produksi Terbesar')
+st.write('Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara Inputan User')
 list_a = []
 kumulatif = []
 
