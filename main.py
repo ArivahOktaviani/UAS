@@ -53,21 +53,18 @@ df2 = df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
 #Grafik Negara dengan Produksi 
-st.write(":asa")
-fig, ax = plt.subplots()
-x_ = csv_[csv_['kode_negara']==kode]['tahun'].tolist()
-y_ = csv_[csv_['kode_negara']==kode]['produksi'].tolist()
-dic = {'tahun':x_,'produksi':y_}
-st.write(pd.DataFrame(dic))
-ax.bar(x_,y_,total_perbulan, color=colors)
-ax.set_xticklabels(x_, rotation=45)
-ax.set_xlabel("TAhun", fontsize=12)
-ax.set_ylabel("Total jumlah produksi", fontsize=12)
-plt.tight_layout()
-
-cmap_name = 'tab20'
-cmap = cm.get_cmap(cmap_name)
-colors = cmap.colors[:len(x_)]
+ig, ax = plt.subplots()
+ax = plt.gca()
+ax.tick_params(axis='x', colors='blue')
+ax.tick_params(axis='y', colors='red')
+ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
+ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
+ax.set_xlabel("Tahun", color="green", fontsize = 20)
+ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
+ax.legend(fontsize = 20)
+plt.scatter("Tahun", "Jumlah Produksi", color="yellowgreen", marker='x', label='item 1')
+plt.show()
+left_col.pyplot(fig)
 
 
 
