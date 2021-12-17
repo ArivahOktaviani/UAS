@@ -52,16 +52,15 @@ df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
 df2 = df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 left_col.write(df2)
-#Grafik Negara dengan Produksi 
+#Grafik Negara dengan Produksi Sesuai dengan Pilihan
 right_col.subheader("Total Produksi Pertahun")
 fig, ax = plt.subplots()
 ax.plot(df2['tahun'], df2['produksi'])
-ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
-ax.set_xlabel("Tahun", color="green", fontsize = 20)
-ax.set_ylabel("Jumlah Produksi", color="yellow", fontsize = 20)
-ax.legend(fontsize = 20)
+ax.set_xlabel("Tahun", color="black", fontsize = 14)
+ax.set_ylabel("Jumlah Produksi", color="black", fontsize = 14)
+ax.legend(fontsize = 14)
 right_col.pyplot(fig)
-
+####################  BAGIAN A #######################
 
 
 
