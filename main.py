@@ -85,16 +85,13 @@ data1 = []
 total = []
 for i in list (data_csv['kode_negara']) :
     if i not in data1:
-        data1.append(i)
-        
+        data1.append(i)       
 for i in data1 :
     a=data_csv.loc[data_csv['kode_negara'] ==i,'produksi'].sum()
-    total.append(a)
-    
+    total.append(a)    
 dk = pd.DataFrame(list(zip(data1,total)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n_tampil]
-
 dk.plot.bar(x='kode_negara', y='kumulatif',width=0.3, align="center",color="green") 
 plt.show()
 st.pyplot(plt)
