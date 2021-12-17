@@ -13,13 +13,13 @@ import json
 
 #################DATA###################
 #DATA JSON
-jh_ = jsonHandler('kode_negara_lengkap.json')
-df_info = jh_.dataFrame
+data_kodenegara = jsonHandler('kode_negara_lengkap.json')
+data_json = data_kodenegara.dataFrame
 #List negara
-negara_li = df_info['name'].tolist()
+negara_li = data_json['name'].tolist()
 #DATA CSV
-ch_ = csvHandler('produksi_minyak_mentah.csv')
-csv_ = ch_.dataFrame
+data_negara = csvHandler('produksi_minyak_mentah.csv')
+csv_ = data_negara.dataFrame
 #################DATA###################
 
 ################TITLE#################
@@ -64,7 +64,7 @@ right_col.pyplot(fig)
 st.write("Grafik Negara dengan Produksi Terbesar Sesuai Banyak Negara dan Tahun Inputan User")
 list_kodenegara = []
 for i in list(csv_['kode_negara']) :
-    if i not in list(df_info['alpha-3']) :
+    if i not in list(data_json['alpha-3']) :
         list_kodenegara.append(i)
 for i in list_kodenegara :
     csv_ = csv_[csv_.kode_negara != i]
@@ -112,11 +112,11 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
 
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
-        nama_negara = list(df_info['name'])[i]
-        region_negara = list(df_info['region'])[i]
-        subregion_negara = list(df_info['sub-region'])[i]
+for i in range(len(data_json)):
+    if list(data_json['alpha-3'])[i]==kode_negara:
+        nama_negara = list(data_json['name'])[i]
+        region_negara = list(data_json['region'])[i]
+        subregion_negara = list(data_json['sub-region'])[i]
 
 st.subheader('Negara dengan Produksi Terbesar')
 st.markdown(f"Negara : {nama_negara}")
@@ -132,11 +132,11 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
 
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
-        nama_negara = list(df_info['name'])[i]
-        region_negara = list(df_info['region'])[i]
-        subregion_negara = list(df_info['sub-region'])[i]
+for i in range(len(data_json)):
+    if list(data_json['alpha-3'])[i]==kode_negara:
+        nama_negara = list(data_json['name'])[i]
+        region_negara = list(data_json['region'])[i]
+        subregion_negara = list(data_json['sub-region'])[i]
 
 st.subheader('Negara dengan Produksi Terbesar di Kesuluruhan Tahun')
 st.markdown(f"Negara : {nama_negara}")
@@ -154,11 +154,11 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
                                     
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
-        nama_negara = list(df_info['name'])[i]
-        region_negara = list(df_info['region'])[i]
-        subregion_negara = list(df_info['sub-region'])[i]
+for i in range(len(data_json):
+    if list(data_json['alpha-3'])[i]==kode_negara:
+        nama_negara = list(data_json['name'])[i]
+        region_negara = list(data_json['region'])[i]
+        subregion_negara = list(data_json['sub-region'])[i]
                                     
 st.subheader('Negara dengan Produksi Terkecil')
 st.markdown(f"Negara : {nama_negara}")
@@ -177,11 +177,11 @@ nama_negara = ""
 region_negara = ""
 subregion_negara = ""
                                                 
-for i in range(len(df_info)):
-    if list(df_info['alpha-3'])[i]==kode_negara:
-        nama_negara = list(df_info['name'])[i]
-        region_negara = list(df_info['region'])[i]
-        subregion_negara = list(df_info['sub-region'])[i]
+for i in range(len(data_json)):
+    if list(data_json['alpha-3'])[i]==kode_negara:
+        nama_negara = list(data_json['name'])[i]
+        region_negara = list(data_json['region'])[i]
+        subregion_negara = list(data_json['sub-region'])[i]
                                                 
 st.subheader('Negara dengan Produksi Terkecil di Keseluruhan Tahun')
 st.markdown(f"Negara : {nama_negara}")
@@ -198,11 +198,11 @@ listregionol = []
 listsubregionol = []
 
 for i in range(len(dfproduksinol)):
-    for j in range(len(df_info)):
-        if list (dfproduksinol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
-            listnegaranol.append(list(df_info['name'])[j])
-            listregionol.append(list(df_info['region'])[j])
-            listsubregionol.append(list(df_info['sub-region'])[j])
+    for j in range(len(data_json)):
+        if list (dfproduksinol['kode_negara'])[i] == list(data_json['alpha-3'])[j]:
+            listnegaranol.append(list(data_json['name'])[j])
+            listregionol.append(list(data_json['region'])[j])
+            listsubregionol.append(list(data_json['sub-region'])[j])
 st.subheader('Negara dengan Jumlah Produksi Minyak 0 (nol)')
 dfproduksinol['negara'] = listnegaranol
 dfproduksinol['region'] = listregionol
@@ -215,11 +215,11 @@ listregionkumulatifnol = []
 listsubregionkumulatifnol = []
 
 for i in range(len(dfproduksikumulatifnol)):
-    for j in range(len(df_info)):
-        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
-            listnegarakumulatifnol.append(list(df_info['name'])[j])
-            listregionkumulatifnol.append(list(df_info['region'])[j])
-            listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
+    for j in range(len(data_json)):
+        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(data_json['alpha-3'])[j]:
+            listnegarakumulatifnol.append(list(data_json['name'])[j])
+            listregionkumulatifnol.append(list(data_json['region'])[j])
+            listsubregionkumulatifnol.append(list(data_json['sub-region'])[j])
 
 dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
