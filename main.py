@@ -15,7 +15,7 @@ import json
 
 #################DATA###################
 #DATA JSON
-with open("kode_negara_lengkap.json", "r") as f:
+with open("kode_negara_lengkap.json") as f:
     data_json = json.load(f)
 json = pd.DataFrame(data_json)
 #DATA CSV
